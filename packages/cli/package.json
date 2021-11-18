@@ -1,13 +1,12 @@
 {
   "name": "react-booster-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "根据命令行的参数拉取模版",
   "author": "zhengyudong",
   "bin": {
     "booster": "bin/booster.js"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^8.3.0",
