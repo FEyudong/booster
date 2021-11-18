@@ -1,6 +1,6 @@
 {
   "name": "booster-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "根据命令行的参数拉取模版",
   "author": "zhengyudong",
   "bin": {
