@@ -6,7 +6,6 @@
   "bin": {
     "booster": "bin/booster.js"
   },
-  "main": "lib/cli.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
@@ -24,5 +23,6 @@
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "gitHead": "81aa14a16ea6f80c71a6925ed71dc957bbbd8971"
 }
