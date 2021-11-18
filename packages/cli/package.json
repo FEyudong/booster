@@ -3,6 +3,7 @@
   "version": "0.0.6",
   "description": "根据命令行的参数拉取模版",
   "author": "zhengyudong",
+  "preferGlobal": true,
   "bin": {
     "booster": "bin/booster.js"
   },
