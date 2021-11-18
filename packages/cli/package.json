@@ -1,6 +1,6 @@
 {
   "name": "react-booster-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "根据命令行的参数拉取模版",
   "author": "zhengyudong",
   "preferGlobal": true,
