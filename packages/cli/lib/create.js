@@ -43,7 +43,7 @@ async function create(projectName) {
     const answers = await ask();
 
     // 检测版本
-    await checkVersion();
+    // await checkVersion();
     console.log(`✨  Creating project in ${chalk.yellow(projectPath)}.`);
     console.log(`🚀  Invoking generators...`);
     // console.log(answers);
