@@ -1,0 +1,28 @@
+{
+  "name": "booster-cli",
+  "version": "0.0.0",
+  "description": "根据命令行的参数拉取模版",
+  "author": "zhengyudong",
+  "bin": {
+    "booster": "bin/booster.js"
+  },
+  "main": "lib/cli.js",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0",
+    "ejs": "^3.1.6",
+    "fs-extra": "^10.0.0",
+    "globby": "^9.2.0",
+    "inquirer": "^8.2.0",
+    "isbinaryfile": "^4.0.8",
+    "ora": "^4.0.1",
+    "rimraf": "^3.0.2",
+    "semver": "^7.3.5"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
