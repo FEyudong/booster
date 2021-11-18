@@ -1,4 +1,4 @@
-const request = require('request')
+// const request = require('request')
 const semver = require('semver')
 const chalk = require('chalk')
 const packageConfig = require('../package.json')
