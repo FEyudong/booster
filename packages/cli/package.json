@@ -1,5 +1,5 @@
 {
-  "name": "booster-cli",
+  "name": "zyd_booster-cli",
   "version": "0.0.2",
   "description": "根据命令行的参数拉取模版",
   "author": "zhengyudong",
@@ -24,5 +24,5 @@
   "engines": {
     "node": ">=12"
   },
-  "gitHead": "81aa14a16ea6f80c71a6925ed71dc957bbbd8971"
+  "gitHead": "22db3f2db7e21b007de91845ab21a8c9885136d8"
 }
