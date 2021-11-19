@@ -14,6 +14,18 @@ const questions = [
     }]
   },
   {
+    name: 'stateLibrary',
+    type: 'list',
+    message: '您希望安装的状态管理库是?',
+    choices: [{
+      name: 'mobx',
+      value: 'mobx',
+    }, {
+      name: 'redux',
+      value: 'redux',
+    }]
+  },
+  {
     name: 'reactRouterVersion',
     type: 'list',
     message: '选择react-router版本',

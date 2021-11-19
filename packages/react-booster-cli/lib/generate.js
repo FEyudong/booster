@@ -38,12 +38,12 @@ async function generate(answers){
          gitignore:true,
          dot: true,
    })
-
    // 生成文件树对象
    const filesTreeObj = {};
-   files.forEach((filePath)=>{
-     filesTreeObj[filePath] = renderFile(path.resolve(__dirname,'../template',filePath),answers)
+   files.forEach((templatePath)=>{
+     filesTreeObj[templatePath] = renderFile(path.resolve(__dirname,'../template',templatePath),answers)
    })
+
    return filesTreeObj
 }
 

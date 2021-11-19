@@ -17,6 +17,7 @@
     "inquirer": "^8.2.0",
     "isbinaryfile": "^4.0.8",
     "ora": "^4.0.1",
+    "request": "^2.88.2",
     "rimraf": "^3.0.2",
     "semver": "^7.3.5"
   },

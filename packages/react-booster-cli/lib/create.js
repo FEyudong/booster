@@ -18,8 +18,8 @@ const checkVersion = require("./check-version");
 const generate = require("./generate");
 
 const { writeFileTree } = require("./util/file");
-const { platform } = require("os");
 
+// loading
 const spinner = ora();
 async function create(projectName) {
   const cwd = process.cwd(); //当前运行node命令的目录
@@ -39,25 +39,28 @@ async function create(projectName) {
       await create(projectName);
     }
   } else {
+
     // 收集用户输入选项
     const answers = await ask();
-
+    spinner.start("check version");
     // 检测版本
-    // await checkVersion();
+    await checkVersion();
+    spinner.succeed();
     console.log(`✨  Creating project in ${chalk.yellow(projectPath)}.`);
-    console.log(`🚀  Invoking generators...`);
     // console.log(answers);
+    // 更新 package.json
     const pkg = require("../template/package.json");
 
     // 生成项目配置文件，app.config.json
     const appConfig = {};
-    const { platform, reactRouterVersion } = answers;
+    const { platform, isMPA, stateLibrary,reactRouterVersion } = answers;
     if (platform === "mobile") {
       pkg.devDependencies["postcss-pxtorem"] = "^6.0.0";
       pkg.dependencies["lib-flexible"] = "^0.3.2";
     } else if (platform === "pc") {
       pkg.dependencies["antd"] = "latest";
     }
+    pkg.dependencies[stateLibrary] = "latest";
     if (reactRouterVersion === "v5") {
       pkg.devDependencies["react-router"] = "5.1.2";
     } else if (reactRouterVersion === "v6") {
@@ -65,10 +68,11 @@ async function create(projectName) {
     }
 
     appConfig.platform = platform;
-    spinner.start("渲染模版文件");
+
+    spinner.start("rendering template");
     const filesTreeObj = await generate(answers);
     spinner.succeed();
-    spinner.start("生成模版文件");
+    spinner.start("🚀 invoking generators...");
     await writeFileTree(projectPath, {
       ...filesTreeObj,
       "package.json": JSON.stringify(pkg, null, 2),
@@ -91,7 +95,7 @@ async function create(projectName) {
 
 module.exports = (...args) => {
   return create(...args).catch((err) => {
-    spinner.fail("创建失败");
+    spinner.fail("create error");
     console.error(chalk.red.dim("Error: " + err));
     process.exit(1);
   });

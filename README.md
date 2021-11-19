@@ -1,2 +1,9 @@
-# booster
-一款趁手的react脚手架，助力项目开发
+# react-booster-cli
+
+``` sh
+npm install -g react-booster-cli
+booster create my-project
+```
+
+
+
