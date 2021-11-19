@@ -18,6 +18,7 @@ const checkVersion = require("./check-version");
 const generate = require("./generate");
 
 const { writeFileTree } = require("./util/file");
+const runCommand = require("./util/run");
 
 // loading
 const spinner = ora();
@@ -79,6 +80,9 @@ async function create(projectName) {
       "app.config.json": JSON.stringify(appConfig, null, 2),
     });
     spinner.succeed();
+    console.log(`🗃  Initializing git repository...`)
+    await runCommand('git init')
+    
     console.log();
     console.log(
       `🎉  Successfully created project ${chalk.yellow(projectName)}.`
@@ -90,6 +94,8 @@ async function create(projectName) {
           chalk.cyan(` ${chalk.gray("$")} npm run dev`)
       );
     console.log();
+     
+    
   }
 }
 
