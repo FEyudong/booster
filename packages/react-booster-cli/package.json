@@ -17,6 +17,10 @@
     "booster"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {},
   "dependencies": {
     "chalk": "^4.1.2",
@@ -34,5 +38,5 @@
   "engines": {
     "node": ">=12"
   },
-  "gitHead": "a3350cde5c1101deac93b114a2150a192ae593cc"
+  "gitHead": "63e0140e351feb3a419262ae453d4c01a2945e40"
 }
