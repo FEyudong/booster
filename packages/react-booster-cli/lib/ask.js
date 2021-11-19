@@ -14,6 +14,18 @@ const questions = [
     }]
   },
   {
+    name: 'isMPA',
+    type: 'list',
+    message: '生成单页or多页模版?',
+    choices: [{
+      name: '单页（SPA）',
+      value: false,
+    }, {
+      name: '多页（MPA）',
+      value: true,
+    }]
+  },
+  {
     name: 'stateLibrary',
     type: 'list',
     message: '您希望安装的状态管理库是?',

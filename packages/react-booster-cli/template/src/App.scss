@@ -5,10 +5,14 @@
 .hello {
   pointer-events: none;
 }
+.page{
+  margin-top: 25vh;
+  color:blueviolet
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .hello {
-    animation: App-logo-spin infinite 20s linear;
+    animation: spin infinite 20s linear;
   }
 }
 
@@ -24,7 +28,7 @@
 }
 
 
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }

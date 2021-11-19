@@ -6,8 +6,9 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <h1 className="hello">
-                    Hello Booster
+                    Hello Booster !
                 </h1>
+                <h3 className='page'>current page is <span><h2><%= pageName %></h2></span></h3>
             </header>
         </div>
     );
