@@ -70,7 +70,7 @@ async function create(projectName) {
     appConfig.platform = platform;
 
     spinner.start("rendering template");
-    const filesTreeObj = await generate(answers);
+    const filesTreeObj = await generate(answers,projectPath);
     spinner.succeed();
     spinner.start("🚀 invoking generators...");
     await writeFileTree(projectPath, {

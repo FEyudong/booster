@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>index</title>
     <%_ if(platform === 'mobile') { _%>
-    <script><%%= require('raw-loader!../../../node_modules/lib-flexible/flexible.js') %%></script>
+    <script><%%= require(`raw-loader!<%=projectDir%>/node_modules/lib-flexible/flexible.js`) %%></script>
     <%_ } _%>
 </head>
 <body>

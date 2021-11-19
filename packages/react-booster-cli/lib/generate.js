@@ -29,7 +29,7 @@ function renderFile (filePath,ejsOptions = {}) {
  * @param {*} answers 收集的问题
  * @returns 文件树 eg { '/path/a/b' : 文件内容 }
  */
-async function generate(answers){
+async function generate(answers,projectPath){
   const globby = require('globby');
 
   // 匹配脚手架文件夹所有文件
@@ -41,7 +41,10 @@ async function generate(answers){
    // 生成文件树对象
    const filesTreeObj = {};
    files.forEach((templatePath)=>{
-     filesTreeObj[templatePath] = renderFile(path.resolve(__dirname,'../template',templatePath),answers)
+     filesTreeObj[templatePath] = renderFile(path.resolve(__dirname,'../template',templatePath),{
+       ...answers,
+       projectDir:projectPath
+     })
    })
 
    return filesTreeObj

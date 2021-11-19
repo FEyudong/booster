@@ -18,9 +18,6 @@ function deleteRemovedFiles (directory, newFiles, previousFiles) {
  * @param {*} previousFiles 
  */
 async function writeFileTree (dir, files, previousFiles) {
-  if (process.env.VUE_CLI_SKIP_WRITE) {
-    return
-  }
   if (previousFiles) {
     await deleteRemovedFiles(dir, files, previousFiles)
   }
