@@ -1,6 +1,6 @@
 {
   "name": "react-booster-cli",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Command line interface for rapid react project development",
   "author": "zhengyudong",
   "bin": {
