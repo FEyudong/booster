@@ -1,11 +1,9 @@
-# `cli`
+# react-booster-cli
 
-> TODO: description
-
-## Usage
-
+``` sh
+npm install -g react-booster-cli
+booster create my-project
 ```
-const cli = require('cli');
 
-// TODO: DEMONSTRATE API
-```
+
+

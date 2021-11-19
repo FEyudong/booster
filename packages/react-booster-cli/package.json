@@ -1,12 +1,23 @@
 {
   "name": "react-booster-cli",
   "version": "0.0.10",
-  "description": "根据命令行的参数拉取模版",
+  "description": "Command line interface for rapid react project development",
   "author": "zhengyudong",
   "preferGlobal": true,
   "bin": {
     "booster": "bin/booster.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FEyudong/booster.git",
+    "directory": "packages/react-booster-cli"
+  },
+  "keywords": [
+    "react",
+    "cli",
+    "booster"
+  ],
+  "license": "MIT",
   "scripts": {},
   "dependencies": {
     "chalk": "^4.1.2",
