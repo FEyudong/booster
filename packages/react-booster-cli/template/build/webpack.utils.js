@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const fs = require("fs");
 const isProd = process.env.NODE_ENV === "production"; // https://webpack.docschina.org/api/cli/#node-env
-const { platform } = require("../app.config.json");
+const { platform, pageMode } = require("../app.config.json");
 const getPageName = (filePath, isMPA) => {
   const reg = isMPA ? /src\/pages\/([^/]*)/ : /src\/([^.]+)\./;
   const match = filePath.match(reg);
@@ -16,16 +16,19 @@ const getPageName = (filePath, isMPA) => {
  * 获取页面打包的入口及htmlPlugin,支持多页
  */
 const getPAGES = () => {
-  const isMPA = fs.existsSync(path.resolve(__dirname, "../src/pages"));
+  const isMPA = pageMode === 'MPA';
   const entryFiles = glob.sync(
     path.resolve(__dirname, `../src/${isMPA ? `pages/*/` : ""}index.{ts,tsx}`)
   );
+  if(entryFiles.length === 0 ){
+    throw new Error('找不到任何入口文件')
+  }
   const entry = {};
   const htmlWebpackPlugins = [];
   entryFiles.forEach((filePath) => {
     const pageName = getPageName(filePath, isMPA);
     if (!pageName) {
-      throw new Error(`未找到${filePath}页面入口文件`);
+      throw new Error(`${filePath}目录下必须存在页面入口文件`);
     }
     entry[pageName] = filePath;
     htmlWebpackPlugins.push(

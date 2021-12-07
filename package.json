@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "test":"npx booster create demo01"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"

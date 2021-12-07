@@ -52,23 +52,23 @@ async function create(projectName) {
     // 更新 package.json
     const pkg = require("../template/package.json");
 
-    // 生成项目配置文件，app.config.json
-    const appConfig = {};
-    const { platform, isMPA, stateLibrary,reactRouterVersion } = answers;
+ 
+    const { platform, pageMode, stateLibrary,reactRouterVersion } = answers;
     if (platform === "mobile") {
       pkg.devDependencies["postcss-pxtorem"] = "^6.0.0";
       pkg.dependencies["lib-flexible"] = "^0.3.2";
-    } else if (platform === "pc") {
-      pkg.dependencies["antd"] = "latest";
-    }
+    } else if (platform === "pc") {}
     pkg.dependencies[stateLibrary] = "latest";
     if (reactRouterVersion === "v5") {
       pkg.devDependencies["react-router"] = "5.1.2";
     } else if (reactRouterVersion === "v6") {
       pkg.dependencies["react-router"] = "^6.x";
     }
-
-    appConfig.platform = platform;
+    // 生成项目配置文件，app.config.json
+    const appConfig = {
+      pageMode,// 单页 or 多页
+      platform, // 移动 or PC
+    };
 
     spinner.start("rendering template");
     const filesTreeObj = await generate(answers,projectPath);

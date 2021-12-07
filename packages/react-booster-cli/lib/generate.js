@@ -38,7 +38,8 @@ async function generate(answers, targetDir) {
     gitignore: true,
     dot: true,
   });
-  const { isMPA } = answers;
+  const { pageMode } = answers;
+  const isMPA = pageMode === 'MPA';
   // ejs注入的模版变量
   const ejsData = {
     ...answers,

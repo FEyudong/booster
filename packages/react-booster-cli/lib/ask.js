@@ -14,15 +14,15 @@ const questions = [
     }]
   },
   {
-    name: 'isMPA',
+    name: 'pageMode',
     type: 'list',
     message: '生成单页or多页模版?',
     choices: [{
       name: '单页（SPA）',
-      value: false,
+      value: "SPA",
     }, {
       name: '多页（MPA）',
-      value: true,
+      value: "MPA",
     }]
   },
   {

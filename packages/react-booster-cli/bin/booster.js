@@ -10,7 +10,7 @@ program
   program.command("create <project-name>")
   .description("创建一个新的项目")
   .action((projectName)=>{
-    require('../lib/create1')(projectName)
+    require('../lib/create')(projectName)
   })
 
   program.parse(process.argv);  
